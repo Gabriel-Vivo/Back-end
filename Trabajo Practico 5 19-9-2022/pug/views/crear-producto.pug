@@ -1,0 +1,15 @@
+doctype html
+html
+    include includes/head.pug
+    body 
+        h2 Create a product
+        form(action='/products' method='post')
+            label Nombre:
+            input(name='title')
+            label Precio:
+            input(name='price')
+            label Thumbnail:
+            input(name='thumbnail')
+            input(type='submit')
+        a.btn.btn-success(href='/products') Ver Prodcutos
+        include includes/foot.pug

@@ -1,0 +1,24 @@
+
+{{#if products}}
+    <table class="table">
+        <thead style="border: 1px solid black">
+          <tr>
+            <th scope="col" style="border: 1px solid black">Nombre Del Producto</th>
+            <th scope="col" style="border: 1px solid black">Precio</th>
+            <th scope="col" style="border: 1px solid black">Imagen</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+    {{#each products}}
+        <tr>
+            <td style="border: 1px solid black">{{this.nombre}}</td>
+            <td style="border: 1px solid black">$ {{this.precio}}</td>
+            <td style="border: 1px solid black"><img src={{this.thumbnail}} width="80"></td>
+        </tr>
+    {{/each}}
+            </tbody>
+        </table>
+{{else}}
+<p>No hay Productos</p>
+{{/if}}
+<a href="/" class="btn btn-success">Crear Producto</a>

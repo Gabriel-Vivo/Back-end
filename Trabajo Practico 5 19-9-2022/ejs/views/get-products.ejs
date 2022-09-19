@@ -1,0 +1,29 @@
+
+<%- include('./partials/head')  %> 
+
+<% if (products.length>0) { %>
+    <table class="table" style="border: 1px solid black">
+        <thead >
+          <tr  >
+            <th scope="col" style="border: 1px solid black">Nombre Producto</th>
+            <th scope="col" style="border: 1px solid black">Precio</th>
+            <th scope="col" style="border: 1px solid black">Imagen</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+    <% products.forEach(item => { %>
+        <tr>
+            <td style="border: 1px solid black"><%=item.title  %> </td>
+            <td style="border: 1px solid black">$ <%=item.price  %> </td>
+            <td style="border: 1px solid black"><img src="<%=item.thumbnail %>" width="80"></td>
+        </tr>
+    <% }) %>
+        </tbody>
+        </table>
+<% } else { %>
+    <p>No hay Prodcutos !!!</p>
+<% } %>
+
+
+<a href="/" class="btn btn-success " style="margin-top: 100px" >Crear Productos</a>
+<%- include('./partials/foot')  %> 
